@@ -1,0 +1,100 @@
+body{
+  background-color: Black;
+}
+
+header{
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px
+  min-width: 100px;
+  height: 200px;
+}
+
+.button{
+  display:inline-block;
+  width: 24.5%;
+}
+
+.button p{
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, cursive;
+  font-size: 20px;
+}
+
+.button img{
+    width: 100%;
+    height: 400px;
+    opacity: 0.7;
+}
+
+.button img:hover{
+    width: 100%;
+    height: 400px;
+    opacity: 1;
+}
+
+.youtube p, ul, h2 {
+  font-family: Arial;
+  font-size: 20px;
+  color: white;
+}
+
+.youtube span iframe{
+  margin-left: 50px;
+}
+
+.describe{
+  color: white;
+}
+
+.story, .wizard{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.story q {
+  font-family:inherit;
+}
+
+.wizard .author {
+  text-align:right;
+}
+
+.wizard .phrase{
+  margin-left: 10px;
+}
+
+.wizard ul li {
+  margin-left: 400px;
+
+}
+
+footer img {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin-top: -20px;
+}
+
+footer {
+  color : white;
+  height: 70px;
+}
+
+.hogwarts, .krestrag img {
+  margin-right:20px;
+}
+
+.hogwarts, .krestrag{
+  display: inline-block;
+  float: left;
+  padding: 10px;
+}
