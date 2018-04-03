@@ -1,0 +1,16 @@
+body{
+  font-family: "Din Pro";
+}
+
+.webform {
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.components input{
+  right: 0;
+}
+
+.legend {
+  text-align: center;
+}

@@ -1,0 +1,5 @@
+To make a script(function) to find out weather there are files in a given directory and its
+subdirectories, which is meeting the next requirements:
+1) to be created in given period of time
+2) to contain a given letter combination in its name
+All data for search is going to be taken from a webform.
