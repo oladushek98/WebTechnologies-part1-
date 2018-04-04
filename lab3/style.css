@@ -7,10 +7,18 @@ body{
   margin-right: 500px;
 }
 
-.components input{
-  right: 0;
+.ggg{
+  display: table;
+  margin: 0px auto;
+  margin-top: 10px;
 }
 
-.legend {
+legend {
   text-align: center;
+}
+
+label {
+  margin-left: 50px;
+  margin-right: 30px;
+  width: 100px;
 }

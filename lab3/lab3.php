@@ -7,18 +7,18 @@
   </head>
   <body>
     <form class="webform" action="/lab3.php" method="post">
-      <fieldset class="components">
+      <fieldset class="components" >
         <legend><center>Data for the search</center></legend>
-        <p><label> Path </label> <input type="text" name="path" value="" size=30/> </p>
-        <p><label> Left timeborder</label> <input type="datetime-local" name="date1" value="" size=30/></p>
-        <p><label> Right timeborder</label> <input type="datetime-local" name="date2" value="" size=30/></p>
-        <p><label> Letter combination</label> <input type="text" name="name" value="" size=30/></p>
+        <p><label> Path </label> <input class = "ggg" type="text" name="path" value="" size=25/> </p>
+        <p><label> Left timeborder</label> <input class = "ggg" type="datetime-local" name="date1" value="" size=30/></p>
+        <p><label> Right timeborder</label> <input class = "ggg" type="datetime-local" name="date2" value="" size=30/></p>
+        <p><label> Letter combination</label> <input class = "ggg" type="text" name="name" value="" size=25/></p>
       </fieldset>
-      <p><center><input class="button" type="submit" name="button" value="Отправить ответ"></center></p>
+      <p><center><input class="button" type="submit" name="button" value="Send"></center></p>
     </form>
 
     <?php
-      function Search($path, $date_begin, $date_end, $name, $count)
+      function Search($path, $date_left, $date_right, $name, $count)
       {
         if ($dh = opendir($path))
         {
@@ -27,29 +27,35 @@
             $temp = filectime($path.'\\'.$file) + 10800;
             if($file == '.' || $file == '..') continue;
             if(is_dir($path.'\\'.$file))
-              Search($path.'\\'.$file, $date_begin, $date_end, $name, $count);
+              Search($path.'\\'.$file, $date_left, $date_right, $name, $count);
             else if ((strpos(basename($file), $name) !== false)
-              && (($temp > $date_begin) && ($temp < $date_end)))
+              && (($temp > $date_left) && ($temp < $date_right)))
               {
-                echo ($path.'\\'.basename($file) );
+                echo $path.'\\'.basename($file);
                 echo "<br/>";
                 $count++;
               }
           }
           closedir($dh);
         }
+        return $count;
       }
 
       if (isset($_POST['button']))
       {
         $path = ($_POST['path']);
-        $date_begin = strtotime(($_POST['date1']));
-        $date_end = strtotime(($_POST['date2']));
+        $date_left = strtotime(($_POST['date1']));
+        $date_right = strtotime(($_POST['date2']));
         $name = ($_POST['name']);
         $count = 0;
-        Search($path, $date_begin, $date_end, $name, $count);
-        /*if ($count == 0)
-          echo "Nothng founded!";*/
+        if (($path == "") || ($name == "") || ((is_dir($path) === false)))
+          echo "Incorrect data for search! Check it, please!";
+        else
+        {
+          $count = Search($path, $date_left, $date_right, $name, $count);
+          if ($count == 0)
+            echo "Nothng has been founded!";
+        }
       }
 
      ?>
