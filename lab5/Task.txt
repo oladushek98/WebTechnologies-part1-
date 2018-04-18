@@ -1,0 +1,5 @@
+You have a DataBase of users' e-mails.
+You're to enter a new e-mail, check whether it's correct and check whether it's in the DataBase.
+If it's, you shouldn't do anything, if not - you're to add this e-mail into the DataBase.
+
+Don't forget to create and use your own MySQL DataBase of e-mails.
